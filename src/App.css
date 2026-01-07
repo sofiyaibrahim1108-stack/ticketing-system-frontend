@@ -1,0 +1,698 @@
+body {
+  margin: 0px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.formContainer {
+  width: 400px;
+  /* margin: 0px auto; */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: solid 1px black;
+  padding: 20px;
+  border-radius: 20px;
+  align-items: center;
+}
+
+
+.formContainer input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.formContainer select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+
+.formContainer button {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Links */
+.formContainer p {
+  margin-top: 10px;
+}
+
+.formContainer a {
+  text-decoration: none;
+  color: blue;
+}
+
+.dashboardContainer {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  padding: 20px;
+  width: 200px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  background-color: #e0f7fa;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.logoutBtn {
+  margin-top: 30px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f44336;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logoutBtn:hover {
+  background-color: #d32f2f;
+}
+
+
+/* ===== Category Page ===== */
+
+.categoryPage {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Header ===== */
+
+.categoryHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.categoryHeader h2 {
+    margin: 0;
+    color: #333;
+}
+
+.categoryHeader button {
+    background: #f1f1f1;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.categoryHeader button:hover {
+    background: #ddd;
+}
+
+/* ===== Messages ===== */
+
+.error-message {
+    color: #d32f2f;
+    background: #fdecea;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.success-message {
+    color: #2e7d32;
+    background: #e8f5e9;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* ===== Form ===== */
+
+.categoryForm {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.categoryForm input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.categoryForm button {
+    padding: 10px 18px;
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.categoryForm button:disabled {
+    background: #90caf9;
+    cursor: not-allowed;
+}
+
+/* ===== Table ===== */
+
+.categoryTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.categoryTable th {
+    background: #f5f5f5;
+    text-align: left;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.categoryTable td {
+    padding: 10px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.categoryTable input {
+    padding: 6px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* ===== Action Buttons ===== */
+
+.categoryTable button {
+    margin-right: 6px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.categoryTable button:hover {
+    opacity: 0.9;
+}
+
+.categoryTable .danger {
+    background: #d32f2f;
+    color: white;
+}
+
+.categoryTable button:not(.danger) {
+    background: #1976d2;
+    color: white;
+}
+
+/* ===== Pagination ===== */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.pagination button {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    background: #1976d2;
+    color: white;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background: #bdbdbd;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-weight: 500;
+    color: #333;
+}
+
+/* PAGE CONTAINER */
+.ticketStatusPage {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* TITLE */
+.ticketStatusPage h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* MESSAGES */
+.error-message {
+    color: #d32f2f;
+    background: #fdecea;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.success-message {
+    color: #2e7d32;
+    background: #e8f5e9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/* FORM */
+.statusForm {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.statusForm select {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.statusForm button {
+    padding: 8px 16px;
+    border: none;
+    background: #1976d2;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.statusForm button:disabled {
+    background: #9e9e9e;
+    cursor: not-allowed;
+}
+
+/* TABLE */
+.statusTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.statusTable th,
+.statusTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.statusTable th {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.statusTable select {
+    padding: 6px;
+    border-radius: 4px;
+}
+
+/* ACTION BUTTONS */
+.statusTable button {
+    margin: 0 4px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.statusTable button:first-child {
+    background: #0288d1;
+    color: #fff;
+}
+
+.statusTable .danger {
+    background: #d32f2f;
+    color: #fff;
+}
+
+.statusTable button:disabled {
+    background: #bdbdbd;
+    cursor: not-allowed;
+}
+
+/* PAGINATION */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.pagination button {
+    padding: 6px 14px;
+    border: none;
+    background: #424242;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background: #bdbdbd;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-weight: bold;
+}
+
+/* Page container */
+.ticketPage {
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f7f8fa;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+}
+
+/* Heading */
+.ticketPage h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Back button */
+.ticketPage > button {
+    margin-bottom: 15px;
+    padding: 6px 12px;
+    border: none;
+    background-color: #555;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ticketPage > button:hover {
+    background-color: #333;
+}
+
+/* Messages */
+.error-message {
+    color: #d32f2f;
+    margin-bottom: 10px;
+}
+
+.success-message {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+/* Form */
+.ticketForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+
+/* Full width fields */
+.ticketForm textarea {
+    grid-column: span 2;
+    min-height: 80px;
+}
+
+/* Inputs */
+.ticketForm input,
+.ticketForm textarea,
+.ticketForm select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+}
+
+.ticketForm input:focus,
+.ticketForm textarea:focus,
+.ticketForm select:focus {
+    outline: none;
+    border-color: #4caf50;
+}
+
+/* Submit button */
+.ticketForm button {
+    grid-column: span 2;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.ticketForm button:hover:not(:disabled) {
+    background-color: #43a047;
+}
+
+.ticketForm button:disabled {
+    background-color: #a5d6a7;
+    cursor: not-allowed;
+}
+
+/* Table */
+.ticketTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.ticketTable th,
+.ticketTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.ticketTable th {
+    background-color: #eaeaea;
+    font-weight: bold;
+}
+
+.ticketTable tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/* Table buttons */
+.ticketTable button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.ticketTable button:hover {
+    opacity: 0.9;
+}
+
+.ticketTable .danger {
+    background-color: #e53935;
+    color: white;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.pagination button {
+    padding: 6px 12px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background-color: #90caf9;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-weight: bold;
+}
+.dashboardContainer {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logoutBtn {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.logoutBtn:hover { background: #d62828; }
+
+.errorText {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.ticketGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.ticketCard {
+  background: #fff;
+  padding: 15px 18px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+}
+
+.ticketTitle {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ticketDesc {
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+.ticketCategory {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: #333;
+}
+
+.ticketStatus {
+  margin-bottom: 8px;
+}
+
+.ticketStatus label {
+  margin-right: 6px;
+  font-weight: 500;
+}
+
+.ticketStatus select {
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.ticketComments ul {
+  margin: 4px 0 0 0;
+  padding-left: 16px;
+}
+
+.ticketComments li {
+  font-size: 13px;
+  color: #444;
+}
+
+.emptyText, .loadingText {
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  margin-top: 20px;
+}
+.successText {
+  color: green;
+  margin-bottom: 10px;
+}
+
+
+
