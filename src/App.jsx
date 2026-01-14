@@ -8,7 +8,11 @@ import ForgotPassword from "./pages/auth/forgotPassword";
 import ResetPassword from "./pages/auth/resetPassword";
 
 import AdminDashboard from "./pages/admin/adminDashboard";
-import Category from "./pages/admin/category";
+import CategoryLayout from "./pages/admin/category/categoryLayout";
+import CategoryList from "./pages/admin/category/categoryList";
+import AddCategory from "./pages/admin/category/addCategory";
+import EditCategory from "./pages/admin/category/editCategory"
+
 import TicketStatus from "./pages/admin/ticketStatus";
 import TicketAdmin from "./pages/admin/ticket";
 import CommentAdmin from "./pages/admin/comment";
@@ -33,7 +37,15 @@ function App() {
         {/* Admin Protected Routes */}
         <Route element={<ProtectedRoute allowedRole="admin" />}>
           <Route path="/admindashboard" element={<AdminDashboard />} />
-          <Route path="/admin/category" element={<Category />} />
+
+           <Route path="/admin/category" element={<CategoryLayout />}>
+            <Route index element={<CategoryList />} />
+            <Route path="add" element={<AddCategory />} />
+            <Route path=":categoryId/edit" element={<EditCategory />} />
+
+          </Route>
+
+
           <Route path="/admin/ticketStatus" element={<TicketStatus />} />
           <Route path="/admin/ticket" element={<TicketAdmin />} />
           <Route path="/admin/ticket/:ticketId/comment" element={<CommentAdmin />} />

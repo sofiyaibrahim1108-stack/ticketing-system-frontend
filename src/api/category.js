@@ -12,9 +12,26 @@ export async function fetchCategory(page = 1, limit = 4) {
 
     const json = await res.json();
     if (!res.ok) throw new Error(json.message || "Failed to fetch category");
-    return json.category; // IMPORTANT
+    return json.category;
 }
 
+export async function fetchCategoryById(categoryId) {
+    const res = await fetch(
+        `http://localhost:3003/api/category/${categoryId}`,
+        {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem("authToken")}`,
+            },
+        }
+    )
+
+    const json = await res.json()
+    if (!res.ok) throw new Error(json.message || "Failed to fetch category")
+
+    return json.category
+}
 
 // CREATE
 export async function createCategoryApi(categoryName) {
