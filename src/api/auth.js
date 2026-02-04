@@ -1,7 +1,8 @@
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3003"
 
 export async function signup(data) {
-    const res = await fetch(`http://localhost:3003/api/signup`, {
+    const res = await fetch(`${API_BASE_URL}/api/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
@@ -11,7 +12,7 @@ export async function signup(data) {
 
 
 export async function login(data) {
-    const res = await fetch(`http://localhost:3003/api/login`, {
+    const res = await fetch(`${API_BASE_URL}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -20,7 +21,7 @@ export async function login(data) {
 }
 
 export async function verifyOtp(data) {
-    const res = await fetch(`http://localhost:3003/api/verifyOtp`, {
+    const res = await fetch(`${API_BASE_URL}/api/verifyOtp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -29,7 +30,7 @@ export async function verifyOtp(data) {
 }
 
 export async function forgotPassword(data) {
-    const res = await fetch(`http://localhost:3003/api/forgotPassword`, {
+    const res = await fetch(`${API_BASE_URL}/api/forgotPassword`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -38,7 +39,7 @@ export async function forgotPassword(data) {
 }
 
 export async function resetPassword(data) {
-    const res = await fetch(`http://localhost:3003/api/resetPassword`, {
+    const res = await fetch(`${API_BASE_URL}/api/resetPassword`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

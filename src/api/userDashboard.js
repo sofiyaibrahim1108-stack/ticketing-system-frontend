@@ -1,7 +1,9 @@
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3003"
+
 
 export const fetchTicket = async (token) => {
     const res = await fetch(
-        `http://localhost:3003/api/ticket/list?page=1&limit=4`,
+        `${API_BASE_URL}/api/ticket/list?page=1&limit=4`,
         {
             method: "GET",
             headers: {
@@ -20,7 +22,7 @@ export const fetchTicket = async (token) => {
 //status list
 export const fetchStatusList = async (token) => {
     const res = await fetch(
-        `http://localhost:3003/api/ticketStatus/list`,
+        `${API_BASE_URL}/api/ticketStatus/list`,
         {
             method: "GET",
             headers: {
@@ -40,7 +42,7 @@ export const fetchStatusList = async (token) => {
 export const updateTicketStatus = async (ticketId, statusId, token) => {
     console.log({ ticketId, statusId, token });
     const res = await fetch(
-        `http://localhost:3003/api/ticket/${ticketId}/status`,
+        `${API_BASE_URL}/api/ticket/${ticketId}/status`,
         {
             method: "PUT",
             headers: {
@@ -58,7 +60,7 @@ export const updateTicketStatus = async (ticketId, statusId, token) => {
 
 export const fetchCommentsByTicket = async (ticketId, token) => {
   const res = await fetch(
-    `http://localhost:3003/api/comment/ticket/${ticketId}`,
+    `${API_BASE_URL}/api/comment/ticket/${ticketId}`,
     {
       headers: {
         Authorization: `Bearer ${token}`,

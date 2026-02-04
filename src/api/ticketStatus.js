@@ -1,7 +1,11 @@
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3003"
+
+
+
 // GET ALL with pagination
 export async function fetchAllStatus(page = 1, limit = 4) {
     const res = await fetch(
-        `http://localhost:3003/api/ticketStatus/list?page=${page}&limit=${limit}`,
+        `${API_BASE_URL}/api/ticketStatus/list?page=${page}&limit=${limit}`,
         {
             method: "GET",
             headers: {
@@ -20,7 +24,7 @@ export async function fetchAllStatus(page = 1, limit = 4) {
 // CREATE
 export async function createStatus(status) {
     const res = await fetch(
-        `http://localhost:3003/api/ticketStatus`,
+        `${API_BASE_URL}/api/ticketStatus`,
         {
             method: "POST",
             headers: {
@@ -41,7 +45,7 @@ export async function createStatus(status) {
 // UPDATE
 export async function updateStatus(statusId, status) {
     const res = await fetch(
-        `http://localhost:3003/api/ticketStatus/${statusId}`,
+        `${API_BASE_URL}/api/ticketStatus/${statusId}`,
         {
             method: "PUT",
             headers: {
@@ -62,7 +66,7 @@ export async function updateStatus(statusId, status) {
 // DELETE
 export async function deleteStatus(statusId) {
     const res = await fetch(
-        `http://localhost:3003/api/ticketStatus/${statusId}`,
+        `${API_BASE_URL}/api/ticketStatus/${statusId}`,
         {
             method: "DELETE",
             headers: {

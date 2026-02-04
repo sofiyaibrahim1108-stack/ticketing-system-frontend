@@ -1,8 +1,9 @@
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3003"
 
 
 export async function fetchTicketById(ticketId) {
   const token = localStorage.getItem("authToken");
-  const res = await fetch(`http://localhost:3003/api/ticket/${ticketId}`, {
+  const res = await fetch(`${API_BASE_URL}/api/ticket/${ticketId}`, {
     headers: { Authorization: `Bearer ${token}` }
   });
 
@@ -15,7 +16,7 @@ export async function fetchTicketById(ticketId) {
 export async function fetchTicket(page = 1, limit = 4) {
   const token = localStorage.getItem("authToken")
   const res = await fetch(
-    `http://localhost:3003/api/ticket/list?page=${page}&limit=${limit}`,
+    `${API_BASE_URL}/api/ticket/list?page=${page}&limit=${limit}`,
     {
       headers: {
         Authorization: `Bearer ${token}`
@@ -32,7 +33,7 @@ export async function fetchTicket(page = 1, limit = 4) {
 // CREATE
 export async function createTicket(payload) {
   const token = localStorage.getItem("authToken")
-  const res = await fetch("http://localhost:3003/api/ticket", {
+  const res = await fetch(`${API_BASE_URL}/api/ticket`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -51,7 +52,7 @@ export async function createTicket(payload) {
 export async function updateTicket(ticketId, payload) {
   const token = localStorage.getItem("authToken")
   const res = await fetch(
-    `http://localhost:3003/api/ticket/${ticketId}`,
+    `${API_BASE_URL}/api/ticket/${ticketId}`,
     {
       method: "PUT",
       headers: {
@@ -72,7 +73,7 @@ export async function updateTicket(ticketId, payload) {
 export async function deleteTicket(ticketId) {
   const token = localStorage.getItem("authToken")
   const res = await fetch(
-    `http://localhost:3003/api/ticket/${ticketId}`,
+    `${API_BASE_URL}/api/ticket/${ticketId}`,
     {
       method: "DELETE",
       headers: {

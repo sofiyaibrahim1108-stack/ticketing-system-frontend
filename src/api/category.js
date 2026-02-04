@@ -1,7 +1,10 @@
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3003"
+
+
 // GET ALL with pagination
 export async function fetchCategory(page = 1, limit = 4) {
     const res = await fetch(
-        `http://localhost:3003/api/category/list?page=${page}&limit=${limit}`,
+        `${API_BASE_URL}/api/category/list?page=${page}&limit=${limit}`,
         {
             method: "GET",
             headers: {
@@ -17,7 +20,7 @@ export async function fetchCategory(page = 1, limit = 4) {
 
 export async function fetchCategoryById(categoryId) {
     const res = await fetch(
-        `http://localhost:3003/api/category/${categoryId}`,
+        `${API_BASE_URL}/api/category/${categoryId}`,
         {
             method: "GET",
             headers: {
@@ -35,7 +38,7 @@ export async function fetchCategoryById(categoryId) {
 
 // CREATE
 export async function createCategoryApi(categoryName) {
-    const res = await fetch(`http://localhost:3003/api/category`, {
+    const res = await fetch(`${API_BASE_URL}/api/category`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -53,7 +56,7 @@ export async function createCategoryApi(categoryName) {
 // UPDATE
 export async function updateCategoryApi(categoryId, categoryName) {
     const res = await fetch(
-        `http://localhost:3003/api/category/${categoryId}`,
+        `${API_BASE_URL}/api/category/${categoryId}`,
         {
             method: "PUT",
             headers: {
@@ -73,7 +76,7 @@ export async function updateCategoryApi(categoryId, categoryName) {
 // DELETE
 export async function deleteCategoryApi(categoryId) {
     const res = await fetch(
-        `http://localhost:3003/api/category/${categoryId}`,
+        `${API_BASE_URL}/api/category/${categoryId}`,
         {
             method: "DELETE",
             headers: {

@@ -1,9 +1,12 @@
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3003"
+
+
 export async function fetchUser() {
   const token = localStorage.getItem("authToken"); 
 
 
-  const res = await fetch("http://localhost:3003/api/user/list", {
+  const res = await fetch(`${API_BASE_URL}/api/user/list`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
