@@ -11,7 +11,6 @@ export default defineConfig({
   preview: {
     host: true,
     port: 5173,
-    // Indha keezha irukkira line dhaan unga prachanaiya theerkkum
     allowedHosts: ["ticketing-system-frontend-production.up.railway.app"]
   }
 })
